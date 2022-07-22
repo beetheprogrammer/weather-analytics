@@ -1,0 +1,30 @@
+Introduction:
+Hello , i am Ebuka. I am a passionate Front-End Engineer, and i am hoping to bring this passion to agencyAnalytics!
+My goal was to not just do the bare minimum , but go the extra mile to display my skill. So you will find the project
+UI is a bit different from the mokup provided.
+
+My design choices:
+
+1: Why Redux:
+This is a fairly small application and does not require Redux. But i figured that if the assessment asked to use Class 
+components, it would be nice to show i am also familiar with Redux , even though it can be replaced with the newer react hooks.
+
+2: Styled components:
+Since react combines all stylesheets during processing, this can cause styles to spill among components. Styled-components helps
+since it creates a styled react compoennt , with the styles only applying to that component. It also let's me easily manipulate 
+the styles by passing props.
+
+3: Weather icons
+The API only give the icon id. So i had to find the icon online. I then mapped the icon ids to react-icons.
+
+4: Handling errors:
+It's important to let the user know what happened after an event. I used a toast notification to notify users of errors/success.
+
+5: Theme:
+I added light/dark theme so users can use thier preference. I also designed the UI with complimentary colors.
+
+Improvements:
+Some Improvements are :
+1: Making it responsive.
+2: Adding test
+3. handling multiple cities with the same name (Eg : london, ON . london, GB)
