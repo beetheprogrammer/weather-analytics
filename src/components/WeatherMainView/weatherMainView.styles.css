@@ -1,0 +1,33 @@
+.weatherDetailsMainView--header {
+  height: 13%;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  padding: 0rem 0 0rem 2rem;
+  border-bottom: 1px solid #E1E1E1;
+}
+.weatherDetailsMainView--header .details .search {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-right: 2rem;
+}
+.weatherDetailsMainView--overview {
+  padding: 2rem;
+}
+.weatherDetailsMainView--overview .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  margin-top: 1rem;
+}
+.forcastContainer {
+  padding: 2rem;
+}
+.forcastContainer .weatherItems {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  border-radius: 1rem;
+}

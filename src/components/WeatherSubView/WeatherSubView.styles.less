@@ -1,0 +1,148 @@
+@mainColor: #1f3554;
+@whiteColor: #fff;
+@backgroundColorOuterDarker: #878787;
+@backgroundColorOuter: #e1e1e1;
+@headingText: 20px;
+@bigText: 3rem;
+@bigText1: 3.5rem;
+@bigText2: 1.5rem;
+@overviewItem: #294263;
+@iconColor: #8bb2fc;
+// @normalText: 1
+
+.weatherSubView {
+	background-color: @mainColor;
+	padding: 2rem;
+	color: @backgroundColorOuterDarker;
+
+	.title {
+		color: @backgroundColorOuter;
+		font-size: @headingText;
+	}
+
+	.details {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		// gap: 6rem;
+		height: 30%;
+		position: relative;
+		// background-color: red;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid #354865;
+		.icon {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -70%);
+		}
+
+		.location {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.name {
+				font-size: @headingText;
+				color: @backgroundColorOuter;
+			}
+
+			.time {
+				font-size: @headingText;
+				color: @backgroundColorOuter;
+			}
+		}
+		.weather {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			// background-color: red;
+
+			.temperature {
+				font-size: @bigText1;
+				color: @backgroundColorOuter;
+			}
+
+			.description {
+				font-size: @bigText2;
+				word-wrap: break-word;
+				width: 30%;
+				text-align: end;
+			}
+		}
+	}
+
+	.overview {
+		padding: 1rem 0;
+		// background-color: green;
+		height: 70%;
+
+		.weatherOverview {
+			.sunEvents {
+				.sunEvent {
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+					gap: 1.5rem;
+					background-color: @overviewItem;
+					border: 1px solid @iconColor;
+					border-radius: 1rem;
+					margin: 2rem 0;
+					padding: 1rem;
+					position: relative;
+
+					.icon {
+						color: #7f8ea9;
+					}
+
+					.time {
+						font-size: @bigText2;
+						color: @backgroundColorOuter;
+					}
+
+					.timeHistory {
+						position: absolute;
+						right: 1rem;
+					}
+				}
+			}
+
+			.itemsContainer {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-gap: 1rem;
+				margin-top: 1rem;
+
+				.item {
+					background-color: @overviewItem;
+					height: 8rem;
+					padding: 1rem 1rem 1rem 1rem;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-end;
+					position: relative;
+					border-radius: 1rem;
+
+					.icon {
+						position: absolute;
+						top: 0.3rem;
+						right: 0.5rem;
+						z-index: 1;
+						color: @iconColor;
+					}
+
+					.valueType {
+						z-index: 10;
+					}
+
+					.value {
+						color: @backgroundColorOuter;
+						font-size: @bigText;
+						z-index: 10;
+					}
+				}
+			}
+		}
+		// background-color: pink;
+	}
+}

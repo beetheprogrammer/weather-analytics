@@ -1,0 +1,52 @@
+@mainColor: #1F3554;
+@backgroundColorOuter: #E1E1E1;
+
+.weatherDetailsMainView--header{
+  // background-color: red;
+  height: 13%;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  padding: 0rem 0 0rem 2rem;
+
+  border-bottom: 1px solid @backgroundColorOuter;
+
+  .details{
+    .search{
+      // background-color: green;
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      margin-right: 2rem;
+    }
+  }
+}
+
+.weatherDetailsMainView--overview{
+  // background-color: red;
+  // height: 13%;
+  // display: grid;
+  // grid-template-columns: 1fr 1.4fr;
+  padding: 2rem;
+
+  .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    margin-top: 1rem;
+
+  }
+}
+
+.forcastContainer{
+  padding: 2rem;
+
+  .weatherItems{
+    // background-color: red;
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    border-radius: 1rem;
+  }
+}

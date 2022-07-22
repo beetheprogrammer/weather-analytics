@@ -1,0 +1,19 @@
+.dashboard {
+  background-color: #d7dbdf;
+  padding: 1rem;
+  position: relative;
+}
+.dashboard .themeButton {
+  position: absolute;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 1000rem;
+  background-color: #1F3554;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  bottom: -5%;
+  left: -15%;
+}

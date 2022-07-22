@@ -1,0 +1,110 @@
+.weatherSubView {
+  background-color: #1f3554;
+  padding: 2rem;
+  color: #878787;
+}
+.weatherSubView .title {
+  color: #e1e1e1;
+  font-size: 20px;
+}
+.weatherSubView .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30%;
+  position: relative;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #354865;
+}
+.weatherSubView .details .icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -70%);
+}
+.weatherSubView .details .location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.weatherSubView .details .location .name {
+  font-size: 20px;
+  color: #e1e1e1;
+}
+.weatherSubView .details .location .time {
+  font-size: 20px;
+  color: #e1e1e1;
+}
+.weatherSubView .details .weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.weatherSubView .details .weather .temperature {
+  font-size: 3.5rem;
+  color: #e1e1e1;
+}
+.weatherSubView .details .weather .description {
+  font-size: 1.5rem;
+  word-wrap: break-word;
+  width: 30%;
+  text-align: end;
+}
+.weatherSubView .overview {
+  padding: 1rem 0;
+  height: 70%;
+}
+.weatherSubView .overview .weatherOverview .sunEvents .sunEvent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  background-color: #294263;
+  border: 1px solid #8bb2fc;
+  border-radius: 1rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  position: relative;
+}
+.weatherSubView .overview .weatherOverview .sunEvents .sunEvent .icon {
+  color: #7f8ea9;
+}
+.weatherSubView .overview .weatherOverview .sunEvents .sunEvent .time {
+  font-size: 1.5rem;
+  color: #e1e1e1;
+}
+.weatherSubView .overview .weatherOverview .sunEvents .sunEvent .timeHistory {
+  position: absolute;
+  right: 1rem;
+}
+.weatherSubView .overview .weatherOverview .itemsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  margin-top: 1rem;
+}
+.weatherSubView .overview .weatherOverview .itemsContainer .item {
+  background-color: #294263;
+  height: 8rem;
+  padding: 1rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  border-radius: 1rem;
+}
+.weatherSubView .overview .weatherOverview .itemsContainer .item .icon {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.5rem;
+  z-index: 1;
+  color: #8bb2fc;
+}
+.weatherSubView .overview .weatherOverview .itemsContainer .item .valueType {
+  z-index: 10;
+}
+.weatherSubView .overview .weatherOverview .itemsContainer .item .value {
+  color: #e1e1e1;
+  font-size: 3rem;
+  z-index: 10;
+}
