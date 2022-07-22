@@ -24,12 +24,12 @@ class Dashboard extends Component<{
   theme?: string;
   toggleTheme: Function;
 }> {
-	async componentDidMount() {
-		const locationResponseData = await GET_LOCATION_DATA(
-			this.props.selectedLocation
-		);
-		this.props.setLocationData(locationResponseData);
-	}
+	// async componentDidMount() {
+	// 	const locationResponseData = await GET_LOCATION_DATA(
+	// 		this.props.selectedLocation
+	// 	);
+	// 	this.props.setLocationData(locationResponseData);
+	// }
 
 	handleLocationUpdate = async (location: string) => {
 		const locationResponseData = await GET_LOCATION_DATA(location);
@@ -45,7 +45,6 @@ class Dashboard extends Component<{
 
 	render() {
 		const { savedLocations, selectedLocation } = this.props;
-    console.log("THEME", this.props.theme);
     const ThemeIcon = this.props.theme === "dark" ? BiSun : BsMoonFill
 
 		return (

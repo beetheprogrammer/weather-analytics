@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { IInitialState } from '../../redux/AgencyAnalyticsDataStorage/AgencyAnalyticsDataStorage.reducers';
-import { FONTS } from '../../utils/fonts';
 import { ICONS } from '../../utils/icons';
-import { StyledText } from '../utils/CustomText/StyledText.styles';
 import { KELVIN_TO_CELCIUS } from '../utils/utils';
 import WeatherOverviewItems from './WeatherOverviewItem';
 import './WeatherSubView.styles.css'

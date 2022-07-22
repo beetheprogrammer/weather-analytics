@@ -15,10 +15,6 @@ export const WeatherDetailsContainer = styled("div")`
   grid-template-columns: .6fr 2fr 1fr;
 `;
 
-export const WeatherDetailsMainView = styled("div")`
-
-`;
-
 export const WeatherDetailsSubView = styled("div")`
 	background-color: ${({ theme }: { theme: ITheme }) => theme.mainColor || "red"} !important;
 `;

@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import {
 	PinLocation,
-	SearchBar,
-	WeatherDetailsMainView,
 } from "./WeatherMainView.styles";
 import { BsPinMap } from "react-icons/bs";
 

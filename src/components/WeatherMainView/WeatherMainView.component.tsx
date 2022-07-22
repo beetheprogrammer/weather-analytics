@@ -1,12 +1,10 @@
-import { Component, ReactNode } from "react";
+import { Component } from "react";
 import {
-	PinLocation,
 	SearchBar,
-	WeatherDetailsMainView,
 	WeatherItem,
 } from "./WeatherMainView.styles";
 import "./weatherMainView.styles.css";
-import { BsSearch, BsPinMap } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
 import { ThemeConsumer } from "styled-components";
 import LocationPin from "./PinLocation.component";
 import { StyledText } from "../utils/CustomText/StyledText.styles";
@@ -74,11 +72,9 @@ class WeatherMainView extends Component<{
 	};
 
 	handleLocationUpdate = async () => {
-		console.log("HAndling");
 		const locationResponseData = await GET_LOCATION_DATA(
 			this.state.enteredLocation
 		);
-		console.log("HAndling data", locationResponseData);
 		if (locationResponseData) {
 			this.props.setLocationData(locationResponseData);
 			this.props.setSelectedLocation(this.state.enteredLocation);
@@ -93,11 +89,11 @@ class WeatherMainView extends Component<{
 		const { list } = this.props.locationData;
 		const data = list ? DAILY_TEMPS(list) : [];
     const chartDataSet = CHART_DATA(data);
-		console.log("locationData", data);
+
 		return (
 			<ThemeConsumer>
 				{(theme) => (
-					<WeatherDetailsMainView data-tut="reactour__locationMainDetails">
+					<div data-tut="reactour__locationMainDetails">
 						<div className="weatherDetailsMainView--header">
 							<div>
 								<StyledText size={FONTS.type_2} bold={true} isMainColor={true}>
@@ -124,6 +120,7 @@ class WeatherMainView extends Component<{
 												className="icon"
 												color={theme.backgroundColorOuterDarker}
 												onClick={() => this.handleLocationUpdate()}
+                        style={{cursor: "pointer"}}
 											/>
 										)}
 									</SearchBar>
@@ -143,8 +140,6 @@ class WeatherMainView extends Component<{
 								{Object.values(data)
 									.slice(1)
 									.map((data: any, index) => {
-										// const Icon = data ? ICONS["01d"];
-										console.log("DATA ICON", data);
 										const iconId = data ? data?.weather : "10d";
 										const Icon = ICONS[iconId as keyof typeof ICONS];
 										return (
@@ -168,7 +163,7 @@ class WeatherMainView extends Component<{
 							data={chartDataSet}
 							style={{ width: "90%" }}
 						/>
-					</WeatherDetailsMainView>
+					</div>
 				)}
 			</ThemeConsumer>
 		);

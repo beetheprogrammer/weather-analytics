@@ -9,7 +9,7 @@ export interface IInitialState {
 }
 
 const INITIAL_STATE = {
-	theme: "dark",
+	theme: "light",
 	savedLocations: ["Ottawa", "Moscow", "Tokyo"],
 	selectedLocation: "Ottawa",
 	locationData: {},

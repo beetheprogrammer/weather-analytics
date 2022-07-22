@@ -4,10 +4,7 @@ import { MdOutlineWaves } from "react-icons/md";
 import { WiHumidity } from "react-icons/wi";
 import { DiDigitalOcean } from "react-icons/di";
 import { BsSunset, BsSunFill } from "react-icons/bs";
-import Moment from "react-moment";
 import moment from "moment";
-
-// import "moment-timezone";
 
 class WeatherOverviewItems extends Component<{
 	locationData?: any;

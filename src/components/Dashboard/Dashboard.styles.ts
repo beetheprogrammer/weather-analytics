@@ -15,21 +15,15 @@ export const ActiveDot = styled("div")`
 	right: 0;
 `;
 export const SavedLocation = styled("div")`
-	/* background-color: ${({ theme }: { theme: ITheme }) =>
-		theme.backgroundColorInner} ; */
 	margin: 1rem 0;
-	/* padding: .3rem; */
 	display: flex;
-	/* justify-content: space-between */
 	position: relative;
 	align-items: center;
-	/* color: white; */
 	color: ${({ theme, active }: { theme: ITheme; active: boolean }) =>
 		active ? theme.mainColor : theme.backgroundColorOuterDarker};
 
 	:hover {
 		cursor: pointer;
-		/* color: ${({ theme }: { theme: ITheme }) => theme.mainColor}; */
 
 		.activeDot {
 			background-color: ${({
@@ -42,7 +36,6 @@ export const SavedLocation = styled("div")`
 `;
 
 export const SavedLocationIcon = styled("div")`
-	/* background-color: gray; */
 	background-color: ${({ theme }: { theme: ITheme }) =>
 		theme.backgroundColorInner};
 	padding: 0.3rem;

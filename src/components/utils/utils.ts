@@ -1,5 +1,6 @@
 import axios from "axios";
 import moment from "moment";
+import { toast } from "react-toastify";
 
 export const GET_LOCATION_DATA = async (location: string) => {
 	const result = await axios
@@ -10,7 +11,7 @@ export const GET_LOCATION_DATA = async (location: string) => {
 			return res.data;
 		})
 		.catch((error) => {
-			console.log("ERROR", error);
+			toast.error("API_ERROR: We could not fetch Data for this location.");
 		});
 
 	return result;
@@ -23,15 +24,13 @@ export const KELVIN_TO_CELCIUS = (temp: number) => {
 export const DAILY_TEMPS = (data: any) => {
 	const dayOfTheWeek = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
 	const dailyTemps: any = {};
-	// console.log("In daily temps", data);
 	if (data) {
 		data?.forEach((item: any, index: number) => {
 			const date = item.dt_txt.split(" ")[0];
 			if (!dailyTemps[date]) {
 				const formattedDate: any = moment(date);
-				console.log("formattedDate", dayOfTheWeek[formattedDate.day()]);
 				dailyTemps[date] = {
-					day: dayOfTheWeek[formattedDate.day()], // formattedDate.split(" ")[0],
+					day: dayOfTheWeek[formattedDate.day()],
 					temp_max: item.main.temp_max,
 					temp_min: item.main.temp_min,
 					weather: item.weather[0].icon,

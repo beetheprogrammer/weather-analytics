@@ -4,28 +4,33 @@ import { GlobalStyle } from "./App.styles";
 import HomePage from "./pages/HomePage/HomePage.page";
 import { THEME } from "./utils/themes";
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { connect } from "react-redux";
 import { IInitialState } from "./redux/AgencyAnalyticsDataStorage/AgencyAnalyticsDataStorage.reducers";
 import AppTour from "./components/Apptour/AppTour";
+import { GET_LOCATION_DATA } from "./components/utils/utils";
+import { setLocationData } from "./redux/AgencyAnalyticsDataStorage/AgencyAnalyticsDataStorage.actions";
 
 class App extends Component<{
 	theme?: string;
+	selectedLocation: string;
+	setLocationData: Function;
+	locationData?: Object;
 }> {
-	state = {
-		theme: "light",
-	};
-	// const city = "Ottawa"
-	// const API_KEY = "65a128ee6dca33df0f5504396150b4c7"
-	// const url = `api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}`;
+	async componentDidMount() {
+		const locationResponseData = await GET_LOCATION_DATA(
+			this.props.selectedLocation
+		);
+		this.props.setLocationData(locationResponseData);
+	}
 
 	render() {
-		const theme = this.props?.theme ? this.props?.theme : "light"
+		const theme = this.props?.theme ? this.props?.theme : "light";
 		return (
 			<>
 				<ThemeProvider theme={THEME[theme]}>
 					<GlobalStyle />
-					<HomePage data-tut="reactour__intro" />
+					{this.props.locationData ? <HomePage data-tut="reactour__intro" /> : <div>Spinner</div>}
 					<ToastContainer />
 				</ThemeProvider>
 				<AppTour />
@@ -41,7 +46,13 @@ interface RootState {
 const mapStateToProps = (state: RootState) => {
 	return {
 		theme: state.agencyAnalytics.theme,
+		selectedLocation: state.agencyAnalytics.selectedLocation,
+		locationData: state.agencyAnalytics.locationData,
 	};
 };
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = (dispatch: any) => ({
+	setLocationData: (data: Object) => dispatch(setLocationData(data)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

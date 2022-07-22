@@ -1,12 +1,6 @@
 import styled from "styled-components";
 import { ITheme } from "../../utils/themes";
 
-export const WeatherDetailsMainView = styled("div")`
-	/* background-color: ${({ theme }: { theme: ITheme }) =>
-		theme.backgroundColor}; */
-    /* padding: 2rem; */
-`;
-
 export const WeatherItem = styled("div")`
 	background-color: ${({ theme }: { theme: ITheme }) =>
 		theme.backgroundColorOuter};

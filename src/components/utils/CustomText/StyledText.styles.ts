@@ -8,5 +8,3 @@ export const StyledText = styled.p<{ size?: string; bold?: boolean; isMainColor?
 	font-size: ${({ size }: any) => size || FONTS.normal};
 	font-weight: ${({ bold }: { bold?: boolean }) => bold && `600`};
 `;
-
-// text-align: center;
