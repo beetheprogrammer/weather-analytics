@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 export const GET_LOCATION_DATA = async (location: string) => {
 	const result = await axios
 		.get(
-			`http://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=65a128ee6dca33df0f5504396150b4c7`
+			`https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=65a128ee6dca33df0f5504396150b4c7`
 		)
 		.then((res) => {
 			return res.data;
