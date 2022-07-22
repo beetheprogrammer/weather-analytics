@@ -28,12 +28,18 @@ class App extends Component<{
 		const theme = this.props?.theme ? this.props?.theme : "light";
 		return (
 			<>
-				<ThemeProvider theme={THEME[theme]}>
-					<GlobalStyle />
-					{this.props.locationData ? <HomePage data-tut="reactour__intro" /> : <div>Spinner</div>}
-					<ToastContainer />
-				</ThemeProvider>
-				<AppTour />
+				{this.props.locationData ? (
+					<>
+						<ThemeProvider theme={THEME[theme]}>
+							<GlobalStyle />
+							<HomePage data-tut="reactour__intro" />
+							<ToastContainer />
+						</ThemeProvider>
+						<AppTour />
+					</>
+				) : (
+					<div>Spinner</div>
+				)}
 			</>
 		);
 	}
