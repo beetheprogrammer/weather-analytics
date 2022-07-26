@@ -10,6 +10,8 @@ import { IInitialState } from "./redux/AgencyAnalyticsDataStorage/AgencyAnalytic
 import AppTour from "./components/Apptour/AppTour";
 import { GET_LOCATION_DATA } from "./components/utils/utils";
 import { setLocationData } from "./redux/AgencyAnalyticsDataStorage/AgencyAnalyticsDataStorage.actions";
+import WeatherPage from "./pages/WeatherPage/WeatherPage.page";
+import "./App.styles.css"
 
 class App extends Component<{
 	theme?: string;
@@ -32,10 +34,11 @@ class App extends Component<{
 					<>
 						<ThemeProvider theme={THEME[theme]}>
 							<GlobalStyle />
-							<HomePage data-tut="reactour__intro" />
+							{/* <HomePage data-tut="reactour__intro" /> */}
+							<WeatherPage />
 							<ToastContainer />
 						</ThemeProvider>
-						<AppTour />
+						{/* <AppTour /> */}
 					</>
 				) : (
 					<div>Spinner</div>

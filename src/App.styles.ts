@@ -5,7 +5,8 @@ export const GlobalStyle = createGlobalStyle`
   body{
     background-color: ${({ theme }: { theme: ITheme }) =>
 			theme.backgroundColorOuter};
-    font-family: "Acme", 'Playfair Display', serif;
+    /* font-family: "Acme", 'Playfair Display', serif; */
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: .05rem;
     font-size: 16px;
   }
